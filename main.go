@@ -32,7 +32,7 @@ func getUid(p string) (string, error) {
 				if len(parts) >= 2 {
 					return parts[1], nil
 				} else {
-					return "", fmt.Errorf("No user ID mentioned")
+					return "", fmt.Errorf("no user id mentioned")
 				}
 
 			}
