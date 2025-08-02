@@ -23,5 +23,8 @@ jobs:
     - name: Lint (staticcheck)
       run: go install honnef.co/go/tools/cmd/staticcheck@latest && staticcheck ./...
 
-    - name: Build
-      run: go build -v ./...
+    - name: Build the binary
+      run: go build -o golsof
+
+    - name: Run the binary
+      run: ./golsof -username
