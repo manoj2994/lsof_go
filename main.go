@@ -46,6 +46,10 @@ func getUid(p string) (string, error) {
 func collect_info(s string, userarg *bool) {
 
 	command, err := os.ReadFile("/proc/" + s + "/comm")
+	if err != nil {
+		// do nothing
+		command = nil
+	}
 	commandline, err := os.ReadFile("/proc/" + s + "/cmdline")
 	if err != nil {
 		// do nothing
